@@ -1,0 +1,64 @@
+name: 打开关闭_suite
+app: deepin-draw
+module: 打开关闭
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_打开关闭_001_s1
+  name: '[002、108][smoke]打开-桌面双击ddf文件打开'
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: e
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_打开关闭_002_s1
+  name: 打开-使用画板打开不支持格式的图片
+  description: ''
+  steps:
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_打开关闭_003_s1
+  name: '[388][smoke][acp1]打开-使用画板打开支持格式的图片'
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_打开关闭_008_s1
+  name: 打开-画板未启动时，打开单个无读权限的ddf文件
+  description: ''
+  steps: []
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+teardown:
+- action: session_stop

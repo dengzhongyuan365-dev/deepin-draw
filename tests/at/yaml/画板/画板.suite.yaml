@@ -1,0 +1,26 @@
+name: 画板_suite
+app: deepin-draw
+module: 画板
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_画板_001_s1
+  name: 【玲珑】【画板】玲珑应用，基本功能测试
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: FormatCombox
+    do: click
+    wait: 1.0
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: FormatCombox
+      role: combo box
+teardown:
+- action: session_stop

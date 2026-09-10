@@ -1,0 +1,71 @@
+name: 选择工具_suite
+app: deepin-draw
+module: 选择工具
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_选择工具_001_s1
+  name: '[181][core][acp1]图片-选择单张图片属性栏展示'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Import tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: element_action
+    selector:
+      name: Select tool button
+    do: focus
+    wait: 0.3
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Import tool button
+      role: push button
+- id: suite_选择工具_002_s1
+  name: '[103]画笔选中框-调节点击所绘制的画笔图案的选中框'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Pencil tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: escape
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Pencil tool button
+      role: push button
+- id: suite_选择工具_003_s1
+  name: 橡皮擦区域无法单击选中
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Eraser tool button
+    do: click
+    wait: 1.0
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Eraser tool button
+teardown:
+- action: session_stop

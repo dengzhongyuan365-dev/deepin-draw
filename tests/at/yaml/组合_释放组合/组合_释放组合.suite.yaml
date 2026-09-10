@@ -1,0 +1,109 @@
+name: 组合_释放组合_suite
+app: deepin-draw
+module: 组合_释放组合
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_组合_释放组合_001_s1
+  name: '[118、159][core][acp1]快捷键-释放组合Ctrl+Shift+G'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+shift+g
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_组合_释放组合_003_s1
+  name: 快捷键-选择一个组合的快捷键
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+g
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_组合_释放组合_005_s1
+  name: '[518]组合-选择不同起点终点的直线点击属性栏组合'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Line tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: GroupButton
+    do: click
+    wait: 1.0
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Line tool button
+- id: suite_组合_释放组合_007_s1
+  name: '[517]组合-选择不同锚点的星形右键菜单进行组合'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Star tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 组合
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Star tool button
+- id: suite_组合_释放组合_013_s1
+  name: '[509]属性-释放组合后修改图元属性'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: UnGroupButton
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: fill color button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 组合
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: UnGroupButton
+teardown:
+- action: session_stop

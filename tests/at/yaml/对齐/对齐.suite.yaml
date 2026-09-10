@@ -1,0 +1,118 @@
+name: 对齐_suite
+app: deepin-draw
+module: 对齐
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_对齐_001_s1
+  name: '[538]对齐-单个图元的对齐菜单'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Triangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: AlignMenu
+      role: menu
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Triangle tool button
+- id: suite_对齐_002_s1
+  name: '[066][core][acp1]底对齐-单个图元底对齐'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Ellipse tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: AlignMenu
+      role: menu
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Ellipse tool button
+- id: suite_对齐_003_s1
+  name: '[065][core][acp1]顶对齐-单个图元顶对齐'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: AlignMenu
+      role: menu
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: AlignMenu
+      role: menu
+- id: suite_对齐_012_s1
+  name: '[537]垂直等间距-多个图片垂直等间距'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: AlignMenu
+      role: menu
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: AlignMenu
+      role: menu
+teardown:
+- action: session_stop

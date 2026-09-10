@@ -1,0 +1,748 @@
+version: '1.0'
+source: at-case-authoring:element-map.yaml
+scan_total: 109
+elements:
+  Import tool button:
+    role: push button
+    ui_name: 左侧工具导入按钮
+    desc: matched from scan/expected_names
+    locator: name
+  OriginalBtn:
+    role: push button
+    ui_name: 保留原图尺寸
+    desc: matched from scan/expected_names
+    locator: accessible_id
+  IncreaseBtn:
+    role: TBD
+    ui_name: 百分比的增加按钮
+    desc: matched from scan/expected_names
+    locator: accessible_id
+  CancelBtn:
+    role: push button
+    ui_name: 取消按钮
+    desc: matched from scan/expected_names
+    locator: accessible_id
+  AlignMenu:
+    role: menu
+    ui_name: 对齐
+    desc: matched from scan/expected_names
+    locator: accessible_id
+  GroupButton:
+    role: TBD
+    ui_name: 组合按钮
+    desc: matched from scan/expected_names
+    locator: accessible_id
+  UnGroupButton:
+    role: TBD
+    ui_name: 释放组合
+    desc: matched from scan/expected_names
+    locator: accessible_id
+  FormatCombox:
+    role: combo box
+    ui_name: 文件格式下拉按钮
+    desc: matched from scan/expected_names
+    locator: accessible_id
+  fill color button:
+    role: TBD
+    ui_name: 填充按钮
+    desc: matched from scan/expected_names
+    locator: name
+  stroken color button:
+    role: TBD
+    ui_name: 描边按钮
+    desc: matched from scan/expected_names
+    locator: name
+  ExpBtn:
+    role: TBD
+    ui_name: 展开粗细下拉框
+    desc: matched from scan/expected_names
+    locator: accessible_id
+  MultipTabBarWidget:
+    role: TBD
+    ui_name: 当前标签页
+    desc: matched from scan/expected_names
+    locator: name
+  Pencil tool button:
+    role: push button
+    ui_name: 画笔
+    desc: matched from scan/expected_names
+    locator: name
+  Width Label:
+    role: label
+    ui_name: WidthLabel
+    desc: 'from scan: m_pLineWidthLabel in frame/AttributesWidgets/private/blurwidget.cpp'
+    locator: accessible_id
+  AlphaSlider:
+    role: slider
+    ui_name: AlphaSlider
+    desc: 'from scan: m_alphaSlider in frame/AttributesWidgets/private/calphacontrolwidget.cpp'
+    locator: name
+  AlphaLabel:
+    role: text
+    ui_name: AlphaLabel
+    desc: 'from scan: m_alphaLabel in frame/AttributesWidgets/private/calphacontrolwidget.cpp'
+    locator: accessible_id
+  AttrComboBox:
+    role: combo box
+    ui_name: AttrComboBox
+    desc: 'from scan: _comBox in frame/AttributesWidgets/private/cattributeitemwidget.cpp'
+    locator: accessible_id
+  ExpGroupBtn:
+    role: push button
+    ui_name: AttrGroupButton
+    desc: 'from scan: expGroupBtn in frame/AttributesWidgets/private/cattributeitemwidget.cpp'
+    locator: accessible_id
+  ExpUnGroupBtn:
+    role: push button
+    ui_name: AttrUngroupButton
+    desc: 'from scan: expUnGroupBtn in frame/AttributesWidgets/private/cattributeitemwidget.cpp'
+    locator: accessible_id
+  ScaleBtn11:
+    role: push button
+    ui_name: ScaleBtn11
+    desc: 'from scan: m_scaleBtn1_1 in frame/AttributesWidgets/private/ccutwidget.cpp'
+    locator: accessible_id
+  ScaleBtn23:
+    role: push button
+    ui_name: ScaleBtn23
+    desc: 'from scan: m_scaleBtn2_3 in frame/AttributesWidgets/private/ccutwidget.cpp'
+    locator: accessible_id
+  ScaleBtn85:
+    role: push button
+    ui_name: ScaleBtn85
+    desc: 'from scan: m_scaleBtn8_5 in frame/AttributesWidgets/private/ccutwidget.cpp'
+    locator: accessible_id
+  ScaleBtn169:
+    role: push button
+    ui_name: ScaleBtn169
+    desc: 'from scan: m_scaleBtn16_9 in frame/AttributesWidgets/private/ccutwidget.cpp'
+    locator: accessible_id
+  FreeBtn:
+    role: push button
+    ui_name: FreeBtn
+    desc: 'from scan: m_freeBtn in frame/AttributesWidgets/private/ccutwidget.cpp'
+    locator: accessible_id
+  CutWidthLineEdit:
+    role: text
+    ui_name: CutWidthLineEdit
+    desc: 'from scan: m_widthEdit in frame/AttributesWidgets/private/ccutwidget.cpp'
+    locator: accessible_id
+  CutHeightLineEdit:
+    role: text
+    ui_name: CutHeightLineEdit
+    desc: 'from scan: m_heightEdit in frame/AttributesWidgets/private/ccutwidget.cpp'
+    locator: accessible_id
+  DoneBtn:
+    role: push button
+    ui_name: DoneBtn
+    desc: 'from scan: m_doneBtn in frame/AttributesWidgets/private/ccutwidget.cpp'
+    locator: accessible_id
+  sizeWidget:
+    role: TBD
+    ui_name: sizeWidget
+    desc: 'from scan: m_sizeWidget in frame/AttributesWidgets/private/ccutwidget.cpp'
+    locator: accessible_id
+  CAlphaControlWidget:
+    role: TBD
+    ui_name: CAlphaControlWidget
+    desc: 'from scan: m_alphaControlWidget in frame/AttributesWidgets/private/colorpanel.cpp'
+    locator: accessible_id
+  PickColorWidget:
+    role: TBD
+    ui_name: PickColorWidget
+    desc: 'from scan: m_pickColWidget in frame/AttributesWidgets/private/colorpanel.cpp'
+    locator: accessible_id
+  LayerMenu:
+    role: menu
+    ui_name: LayerMenu
+    desc: 'from scan: m_layerMenu in frame/cgraphicsview.cpp'
+    locator: accessible_id
+  TextMenu:
+    role: menu
+    ui_name: TextMenu
+    desc: 'from scan: m_textMenu in frame/cgraphicsview.cpp'
+    locator: accessible_id
+  MenuComboBox:
+    role: combo box
+    ui_name: MenuComboBox
+    desc: 'from scan: m_menuComboBox in widgets/csidewidthwidget.cpp'
+    locator: accessible_id
+  FileNameEdit:
+    role: text
+    ui_name: FileNameEdit
+    desc: 'from scan: m_fileNameEdit in widgets/dialog/cexportimagedialog.cpp'
+    locator: accessible_id
+  SavePathCombox:
+    role: combo box
+    ui_name: SavePathCombox
+    desc: 'from scan: m_savePathCombox in widgets/dialog/cexportimagedialog.cpp'
+    locator: accessible_id
+  QualitySlider:
+    role: slider
+    ui_name: QualitySlider
+    desc: 'from scan: m_qualitySlider in widgets/dialog/cexportimagedialog.cpp'
+    locator: accessible_id
+  ExportPathEditor:
+    role: text
+    ui_name: ExportPathEditor
+    desc: 'from scan: m_pathEditor in widgets/dialog/cexportimagedialog.cpp'
+    locator: accessible_id
+  ExportPathChosenButton:
+    role: TBD
+    ui_name: ExportPathChosenButton
+    desc: 'from scan: m_pathChosenButton in widgets/dialog/cexportimagedialog.cpp'
+    locator: accessible_id
+  ReduceBtn:
+    role: TBD
+    ui_name: ReduceBtn
+    desc: 'from scan: m_reduceBtn in widgets/dzoommenucombobox.cpp'
+    locator: accessible_id
+  ScanleBtn:
+    role: push button
+    ui_name: ZoomScaleBtn
+    desc: 'from scan: m_btn in widgets/dzoommenucombobox.cpp'
+    locator: accessible_id
+  ZoomMenu:
+    role: menu
+    ui_name: ZoomMenu
+    desc: 'from scan: m_menu in widgets/dzoommenucombobox.cpp'
+    locator: accessible_id
+  Crop tool button:
+    role: TBD
+    ui_name: Crop tool button
+    desc: 'from expected_names: m_cutBtn in src/drawshape/drawTools/ccuttool.cpp'
+    locator: name
+  scene cut attribution widget:
+    role: TBD
+    ui_name: scene cut attribution widget
+    desc: 'from expected_names: pCutWidget in src/drawshape/drawTools/ccuttool.cpp'
+    locator: name
+  Ellipse tool button:
+    role: TBD
+    ui_name: Ellipse tool button
+    desc: 'from expected_names: m_roundBtn in src/drawshape/drawTools/cellipsetool.cpp'
+    locator: name
+  Eraser tool button:
+    role: TBD
+    ui_name: Eraser tool button
+    desc: 'from expected_names: m_eraserBtn in src/drawshape/drawTools/cerasertool.cpp'
+    locator: name
+  Line tool button:
+    role: TBD
+    ui_name: Line tool button
+    desc: 'from expected_names: m_lineBtn in src/drawshape/drawTools/clinetool.cpp'
+    locator: name
+  Blur tool button:
+    role: TBD
+    ui_name: Blur tool button
+    desc: 'from expected_names: m_blurBtn in src/drawshape/drawTools/cmasicotool.cpp'
+    locator: name
+  Line start style combox:
+    role: TBD
+    ui_name: Line start style combox
+    desc: 'from expected_names: pStreakStartComboBox in src/drawshape/drawTools/cpentool.cpp'
+    locator: name
+  Line end style combox:
+    role: TBD
+    ui_name: Line end style combox
+    desc: 'from expected_names: pStreakEndComboBox in src/drawshape/drawTools/cpentool.cpp'
+    locator: name
+  Star tool button:
+    role: TBD
+    ui_name: Star tool button
+    desc: 'from expected_names: m_starBtn in src/drawshape/drawTools/cpolygonalstartool.cpp'
+    locator: name
+  Polygon tool button:
+    role: TBD
+    ui_name: Polygon tool button
+    desc: 'from expected_names: m_polygonBtn in src/drawshape/drawTools/cpolygontool.cpp'
+    locator: name
+  Rectangle tool button:
+    role: TBD
+    ui_name: Rectangle tool button
+    desc: 'from expected_names: m_rectBtn in src/drawshape/drawTools/crecttool.cpp'
+    locator: name
+  Select tool button:
+    role: TBD
+    ui_name: Select tool button
+    desc: 'from expected_names: m_selectBtn in src/drawshape/drawTools/cselecttool.cpp'
+    locator: name
+  Text color button:
+    role: TBD
+    ui_name: Text color button
+    desc: 'from expected_names: fontColor in src/drawshape/drawTools/ctexttool.cpp'
+    locator: name
+  Text tool button:
+    role: TBD
+    ui_name: Text tool button
+    desc: 'from expected_names: m_textBtn in src/drawshape/drawTools/ctexttool.cpp'
+    locator: name
+  Text font family comboBox:
+    role: TBD
+    ui_name: Text font family comboBox
+    desc: 'from expected_names: fontComboBox in src/drawshape/drawTools/ctexttool.cpp'
+    locator: name
+  Text font style comboBox:
+    role: TBD
+    ui_name: Text font style comboBox
+    desc: 'from expected_names: ftStyleComboBox in src/drawshape/drawTools/ctexttool.cpp'
+    locator: name
+  Triangle tool button:
+    role: TBD
+    ui_name: Triangle tool button
+    desc: 'from expected_names: m_triangleBtn in src/drawshape/drawTools/ctriangletool.cpp'
+    locator: name
+  TextEditor:
+    role: TBD
+    ui_name: TextEditor
+    desc: 'from expected_names: m_pTextEdit in src/drawshape/drawItems/bzItems/cgraphicstextitem.cpp'
+    locator: name
+  LeftTool bar:
+    role: TBD
+    ui_name: LeftTool bar
+    desc: 'from expected_names: this in src/frame/clefttoolbar.cpp'
+    locator: name
+  DDFSaveDialog:
+    role: TBD
+    ui_name: DDFSaveDialog
+    desc: 'from expected_names:  in src/frame/cmultiptabbarwidget.cpp'
+    locator: name
+  MainWindow:
+    role: TBD
+    ui_name: MainWindow
+    desc: 'from expected_names: this in src/frame/mainwindow.cpp'
+    locator: name
+  TopToolbar:
+    role: TBD
+    ui_name: TopToolbar
+    desc: 'from expected_names: this in src/frame/toptoolbar.cpp'
+    locator: name
+  ComAttrWidget:
+    role: TBD
+    ui_name: ComAttrWidget
+    desc: 'from expected_names: m_pAttriManaWgt in src/frame/toptoolbar.cpp'
+    locator: name
+  ColorPickWidget:
+    role: TBD
+    ui_name: ColorPickWidget
+    desc: 'from expected_names: this in src/frame/AttributesWidgets/ccolorpickwidget.cpp'
+    locator: name
+  BlurWidget:
+    role: TBD
+    ui_name: BlurWidget
+    desc: 'from expected_names:  in src/frame/AttributesWidgets/private/blurwidget.cpp'
+    locator: name
+  Blur type button:
+    role: TBD
+    ui_name: Blur type button
+    desc: 'from expected_names: m_blurBtn in src/frame/AttributesWidgets/private/blurwidget.cpp'
+    locator: name
+  Masic type button:
+    role: TBD
+    ui_name: Masic type button
+    desc: 'from expected_names: m_masicBtn in src/frame/AttributesWidgets/private/blurwidget.cpp'
+    locator: name
+  Width:
+    role: TBD
+    ui_name: Width
+    desc: 'from expected_names:  in src/frame/AttributesWidgets/private/blurwidget.cpp'
+    locator: name
+  BlurPenWidth:
+    role: TBD
+    ui_name: BlurPenWidth
+    desc: 'from expected_names:  in src/frame/AttributesWidgets/private/blurwidget.cpp'
+    locator: name
+  Color Alpha slider:
+    role: TBD
+    ui_name: Color Alpha slider
+    desc: 'from expected_names: m_alphaSlider in src/frame/AttributesWidgets/private/calphacontrolwidget.cpp'
+    locator: name
+  AttrSpinBox:
+    role: TBD
+    ui_name: AttrSpinBox
+    desc: 'from expected_names:  in src/frame/AttributesWidgets/private/cattributeitemwidget.cpp'
+    locator: name
+  groupButton:
+    role: TBD
+    ui_name: groupButton
+    desc: 'from expected_names: groupButton in src/frame/AttributesWidgets/private/cattributeitemwidget.cpp'
+    locator: name
+  unGroupButton:
+    role: TBD
+    ui_name: unGroupButton
+    desc: 'from expected_names: unGroupButton in src/frame/AttributesWidgets/private/cattributeitemwidget.cpp'
+    locator: name
+  _pExpWidget:
+    role: TBD
+    ui_name: _pExpWidget
+    desc: 'from expected_names: _pExpWidget in src/frame/AttributesWidgets/private/cattributeitemwidget.cpp'
+    locator: name
+  Cut ratio(1:1) pushbutton:
+    role: TBD
+    ui_name: Cut ratio(1:1) pushbutton
+    desc: 'from expected_names: m_scaleBtn1_1 in src/frame/AttributesWidgets/private/ccutwidget.cpp'
+    locator: name
+  Cut ratio(2:3) pushbutton:
+    role: TBD
+    ui_name: Cut ratio(2:3) pushbutton
+    desc: 'from expected_names: m_scaleBtn2_3 in src/frame/AttributesWidgets/private/ccutwidget.cpp'
+    locator: name
+  Cut ratio(8:5) pushbutton:
+    role: TBD
+    ui_name: Cut ratio(8:5) pushbutton
+    desc: 'from expected_names: m_scaleBtn8_5 in src/frame/AttributesWidgets/private/ccutwidget.cpp'
+    locator: name
+  Cut ratio(16:9) pushbutton:
+    role: TBD
+    ui_name: Cut ratio(16:9) pushbutton
+    desc: 'from expected_names: m_scaleBtn16_9 in src/frame/AttributesWidgets/private/ccutwidget.cpp'
+    locator: name
+  Cut ratio(free) pushbutton:
+    role: TBD
+    ui_name: Cut ratio(free) pushbutton
+    desc: 'from expected_names: m_freeBtn in src/frame/AttributesWidgets/private/ccutwidget.cpp'
+    locator: name
+  Cut ratio(Original) pushbutton:
+    role: TBD
+    ui_name: Cut ratio(Original) pushbutton
+    desc: 'from expected_names: m_originalBtn in src/frame/AttributesWidgets/private/ccutwidget.cpp'
+    locator: name
+  Cut done pushbutton:
+    role: TBD
+    ui_name: Cut done pushbutton
+    desc: 'from expected_names: m_doneBtn in src/frame/AttributesWidgets/private/ccutwidget.cpp'
+    locator: name
+  Cut cancel pushbutton:
+    role: TBD
+    ui_name: Cut cancel pushbutton
+    desc: 'from expected_names: m_cancelBtn in src/frame/AttributesWidgets/private/ccutwidget.cpp'
+    locator: name
+  ColorLineEdit:
+    role: TBD
+    ui_name: ColorLineEdit
+    desc: 'from expected_names:  in src/frame/AttributesWidgets/private/colorpanel.cpp'
+    locator: name
+  ColorfulBtn:
+    role: TBD
+    ui_name: ColorfulBtn
+    desc: 'from expected_names:  in src/frame/AttributesWidgets/private/colorpanel.cpp'
+    locator: name
+  RedEditLabel:
+    role: TBD
+    ui_name: RedEditLabel
+    desc: 'from expected_names:  in src/frame/AttributesWidgets/private/pickcolorwidget.cpp'
+    locator: name
+  GreenEditLabel:
+    role: TBD
+    ui_name: GreenEditLabel
+    desc: 'from expected_names:  in src/frame/AttributesWidgets/private/pickcolorwidget.cpp'
+    locator: name
+  BlueEditLabel:
+    role: TBD
+    ui_name: BlueEditLabel
+    desc: 'from expected_names:  in src/frame/AttributesWidgets/private/pickcolorwidget.cpp'
+    locator: name
+  PickColorPickerButton:
+    role: TBD
+    ui_name: PickColorPickerButton
+    desc: 'from expected_names:  in src/frame/AttributesWidgets/private/pickcolorwidget.cpp'
+    locator: name
+  ColorSlider:
+    role: TBD
+    ui_name: ColorSlider
+    desc: 'from expected_names:  in src/frame/AttributesWidgets/private/pickcolorwidget.cpp'
+    locator: name
+  ColorLabel:
+    role: TBD
+    ui_name: ColorLabel
+    desc: 'from expected_names:  in src/frame/AttributesWidgets/private/pickcolorwidget.cpp'
+    locator: name
+  CSideWidthWidget:
+    role: TBD
+    ui_name: CSideWidthWidget
+    desc: 'from expected_names: this in src/widgets/csidewidthwidget.cpp'
+    locator: name
+  CSpinBox:
+    role: TBD
+    ui_name: CSpinBox
+    desc: 'from expected_names:  in src/widgets/cspinbox.cpp'
+    locator: name
+  CTextEdit:
+    role: TBD
+    ui_name: CTextEdit
+    desc: 'from expected_names:  in src/widgets/ctextedit.cpp'
+    locator: name
+  Zoom Form:
+    role: TBD
+    ui_name: Zoom Form
+    desc: 'from expected_names: this in src/widgets/dzoommenucombobox.cpp'
+    locator: name
+  Zoom Menu button:
+    role: TBD
+    ui_name: Zoom Menu button
+    desc: 'from expected_names: m_btn in src/widgets/dzoommenucombobox.cpp'
+    locator: name
+  Zoom Menu:
+    role: TBD
+    ui_name: Zoom Menu
+    desc: 'from expected_names: m_menu in src/widgets/dzoommenucombobox.cpp'
+    locator: name
+  Zoom increase button:
+    role: TBD
+    ui_name: Zoom increase button
+    desc: 'from expected_names: m_increaseBtn in src/widgets/dzoommenucombobox.cpp'
+    locator: name
+  Zoom reduce button:
+    role: TBD
+    ui_name: Zoom reduce button
+    desc: 'from expected_names: m_reduceBtn in src/widgets/dzoommenucombobox.cpp'
+    locator: name
+  Notice cut info dialog:
+    role: TBD
+    ui_name: Notice cut info dialog
+    desc: 'from expected_names: this in src/widgets/dialog/ccutdialog.cpp'
+    locator: name
+  Export dialog:
+    role: TBD
+    ui_name: Export dialog
+    desc: 'from expected_names: this in src/widgets/dialog/cexportimagedialog.cpp'
+    locator: name
+  Export name line editor:
+    role: TBD
+    ui_name: Export name line editor
+    desc: 'from expected_names: m_fileNameEdit in src/widgets/dialog/cexportimagedialog.cpp'
+    locator: name
+  Export path comboBox:
+    role: TBD
+    ui_name: Export path comboBox
+    desc: 'from expected_names: m_savePathCombox in src/widgets/dialog/cexportimagedialog.cpp'
+    locator: name
+  Export format comboBox:
+    role: TBD
+    ui_name: Export format comboBox
+    desc: 'from expected_names: m_formatCombox in src/widgets/dialog/cexportimagedialog.cpp'
+    locator: name
+  Export quality slider:
+    role: TBD
+    ui_name: Export quality slider
+    desc: 'from expected_names: m_qualitySlider in src/widgets/dialog/cexportimagedialog.cpp'
+    locator: name
+  Export content widget:
+    role: TBD
+    ui_name: Export content widget
+    desc: 'from expected_names: contentWidget in src/widgets/dialog/cexportimagedialog.cpp'
+    locator: name
+  ProgressDialog:
+    role: TBD
+    ui_name: ProgressDialog
+    desc: 'from expected_names:  in src/widgets/dialog/cprogressdialog.cpp'
+    locator: name
+  MessageDlg:
+    role: TBD
+    ui_name: MessageDlg
+    desc: 'from expected_names:  in src/widgets/dialog/dialog.cpp'
+    locator: name
+  Notice save dialog:
+    role: TBD
+    ui_name: Notice save dialog
+    desc: 'from expected_names: this in src/widgets/dialog/drawdialog.cpp'
+    locator: name
+transient_items:
+- name: MainMenu
+  role: menu
+  ui_name: 主菜单
+  desc: matched from scan/expected_names
+- name: MainMenu
+  role: menu
+  ui_name: 窗口右上角主菜单
+  desc: matched from scan/expected_names
+- name: MainMenu
+  role: menu
+  ui_name: 画板主菜单
+  desc: matched from scan/expected_names
+unresolved:
+- name: 弹窗上按钮
+  role: TBD
+  ui_name: 弹窗上按钮
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 适应画布
+  role: TBD
+  ui_name: 适应画布
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 百分比输入框
+  role: TBD
+  ui_name: 百分比输入框
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 应用到全部文件
+  role: TBD
+  ui_name: 应用到全部文件
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 右键菜单
+  role: menu
+  ui_name: 右键菜单
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 删除按钮
+  role: TBD
+  ui_name: 删除按钮
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 撤销按钮
+  role: TBD
+  ui_name: 撤销按钮
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 重做按钮
+  role: TBD
+  ui_name: 重做按钮
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 复制按钮
+  role: TBD
+  ui_name: 复制按钮
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 粘贴按钮
+  role: TBD
+  ui_name: 粘贴按钮
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 剪切按钮
+  role: TBD
+  ui_name: 剪切按钮
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 保存
+  role: TBD
+  ui_name: 保存
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 文档
+  role: TBD
+  ui_name: 文档
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 保存按钮
+  role: TBD
+  ui_name: 保存按钮
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 选择其他目录
+  role: TBD
+  ui_name: 选择其他目录
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 桌面
+  role: TBD
+  ui_name: 桌面
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 确认
+  role: TBD
+  ui_name: 确认
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 确认按钮
+  role: TBD
+  ui_name: 确认按钮
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 打开
+  role: TBD
+  ui_name: 打开
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 启动器画板图标
+  role: TBD
+  ui_name: 启动器画板图标
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 圆角后向下按钮
+  role: TBD
+  ui_name: 圆角后向下按钮
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 圆角后向上按钮
+  role: TBD
+  ui_name: 圆角后向上按钮
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 锚点输入框
+  role: TBD
+  ui_name: 锚点输入框
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 侧边数输入框
+  role: TBD
+  ui_name: 侧边数输入框
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 属性栏上字号按钮
+  role: TBD
+  ui_name: 属性栏上字号按钮
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 熟悉栏字号按钮
+  role: TBD
+  ui_name: 熟悉栏字号按钮
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 属性栏上字号输入框
+  role: TBD
+  ui_name: 属性栏上字号输入框
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 字号输入框
+  role: TBD
+  ui_name: 字号输入框
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 粗细后向下按钮
+  role: TBD
+  ui_name: 粗细后向下按钮
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 粗细后向上按钮
+  role: TBD
+  ui_name: 粗细后向上按钮
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 属性栏关闭按钮
+  role: TBD
+  ui_name: 属性栏关闭按钮
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 属性栏勾确认按钮
+  role: TBD
+  ui_name: 属性栏勾确认按钮
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 替换
+  role: TBD
+  ui_name: 替换
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 三
+  role: TBD
+  ui_name: 三
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 适应画布按钮
+  role: TBD
+  ui_name: 适应画布按钮
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 书法笔
+  role: TBD
+  ui_name: 书法笔
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位
+- name: 粗细输入框
+  role: TBD
+  ui_name: 粗细输入框
+  desc: TBD
+  reason: id_name/object_name 未填 (TBD)，运行时无法按名定位

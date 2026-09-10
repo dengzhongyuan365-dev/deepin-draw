@@ -1,0 +1,41 @@
+name: 用户场景_suite
+app: deepin-draw
+module: 用户场景
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_用户场景_001_s1
+  name: '[559][acp3]覆盖导出时，被覆盖的文件被修改能正常导出'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: FormatCombox
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: FileNameEdit
+    do: focus
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: SavePathCombox
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+e
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: FormatCombox
+      role: combo box
+teardown:
+- action: session_stop

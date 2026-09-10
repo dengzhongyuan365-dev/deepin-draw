@@ -1,0 +1,221 @@
+elements:
+  MainWindow:
+    name: MainWindow
+  Import tool button:
+    name: Import tool button
+    role: push button
+  LeftTool bar:
+    name: LeftTool bar
+  MultipTabBarWidget:
+    name: MultipTabBarWidget
+  DDFSaveDialog:
+    name: DDFSaveDialog
+  ColorSlider:
+    name: ColorSlider
+  ColorLabel:
+    name: ColorLabel
+  ColorLineEdit:
+    name: ColorLineEdit
+  ColorfulBtn:
+    name: ColorfulBtn
+  RedEditLabel:
+    name: RedEditLabel
+  GreenEditLabel:
+    name: GreenEditLabel
+  BlueEditLabel:
+    name: BlueEditLabel
+  PickColorPickerButton:
+    name: PickColorPickerButton
+  ColorPickWidget:
+    name: ColorPickWidget
+  Text tool button:
+    name: Text tool button
+  TextEditor:
+    name: TextEditor
+  FileNameEdit:
+    accessible_id: FileNameEdit
+  SavePathCombox:
+    accessible_id: SavePathCombox
+  BlurWidget:
+    name: BlurWidget
+  BlurPenWidth:
+    name: BlurPenWidth
+  Masic type button:
+    name: Masic type button
+  Color Alpha slider:
+    name: Color Alpha slider
+  Line tool button:
+    name: Line tool button
+  Line start style combox:
+    name: Line start style combox
+  Line end style combox:
+    name: Line end style combox
+  MessageDlg:
+    name: MessageDlg
+  TopToolbar:
+    name: TopToolbar
+  ComAttrWidget:
+    name: ComAttrWidget
+  _pExpWidget:
+    name: _pExpWidget
+  groupButton:
+    name: groupButton
+  unGroupButton:
+    name: unGroupButton
+  Rectangle tool button:
+    name: Rectangle tool button
+  fill color button:
+    name: fill color button
+  LayerMenu:
+    accessible_id: LayerMenu
+  Pencil tool button:
+    name: Pencil tool button
+    role: push button
+  ExpBtn:
+    accessible_id: ExpBtn
+  Width Label:
+    accessible_id: Width Label
+  CSideWidthWidget:
+    name: CSideWidthWidget
+  CSpinBox:
+    name: CSpinBox
+  CTextEdit:
+    name: CTextEdit
+  AttrSpinBox:
+    name: AttrSpinBox
+  Ellipse tool button:
+    name: Ellipse tool button
+  UnGroupButton:
+    accessible_id: UnGroupButton
+  ExpGroupBtn:
+    accessible_id: ExpGroupBtn
+  ExpUnGroupBtn:
+    accessible_id: ExpUnGroupBtn
+  GroupButton:
+    accessible_id: GroupButton
+  sizeWidget:
+    accessible_id: sizeWidget
+  Notice save dialog:
+    name: Notice save dialog
+  AttrComboBox:
+    accessible_id: AttrComboBox
+  AlphaSlider:
+    name: AlphaSlider
+  PickColorWidget:
+    accessible_id: PickColorWidget
+  AlphaLabel:
+    accessible_id: AlphaLabel
+  CAlphaControlWidget:
+    accessible_id: CAlphaControlWidget
+  Triangle tool button:
+    name: Triangle tool button
+  AlignMenu:
+    accessible_id: AlignMenu
+  IncreaseBtn:
+    accessible_id: IncreaseBtn
+  ReduceBtn:
+    accessible_id: ReduceBtn
+  OriginalBtn:
+    accessible_id: OriginalBtn
+  ProgressDialog:
+    name: ProgressDialog
+  CancelBtn:
+    accessible_id: CancelBtn
+  FormatCombox:
+    accessible_id: FormatCombox
+  ExportPathEditor:
+    accessible_id: ExportPathEditor
+  Export format comboBox:
+    name: Export format comboBox
+  Export path comboBox:
+    name: Export path comboBox
+  Export quality slider:
+    name: Export quality slider
+  Export content widget:
+    name: Export content widget
+  Export dialog:
+    name: Export dialog
+  ExportPathChosenButton:
+    accessible_id: ExportPathChosenButton
+  QualitySlider:
+    accessible_id: QualitySlider
+  Export name line editor:
+    name: Export name line editor
+  Crop tool button:
+    name: Crop tool button
+  DoneBtn:
+    accessible_id: DoneBtn
+  scene cut attribution widget:
+    name: scene cut attribution widget
+  Text color button:
+    name: Text color button
+  Text font style comboBox:
+    name: Text font style comboBox
+  TextMenu:
+    accessible_id: TextMenu
+  Text font family comboBox:
+    name: Text font family comboBox
+  Blur tool button:
+    name: Blur tool button
+  Width:
+    name: Width
+  Blur type button:
+    name: Blur type button
+  Eraser tool button:
+    name: Eraser tool button
+  ScanleBtn:
+    accessible_id: ScanleBtn
+  ZoomMenu:
+    accessible_id: ZoomMenu
+  Zoom Menu:
+    name: Zoom Menu
+  Zoom Menu button:
+    name: Zoom Menu button
+  Zoom Form:
+    name: Zoom Form
+  Zoom increase button:
+    name: Zoom increase button
+  Zoom reduce button:
+    name: Zoom reduce button
+  Star tool button:
+    name: Star tool button
+  Polygon tool button:
+    name: Polygon tool button
+  stroken color button:
+    name: stroken color button
+  Cut ratio(1:1) pushbutton:
+    name: Cut ratio(1:1) pushbutton
+  Cut ratio(2:3) pushbutton:
+    name: Cut ratio(2:3) pushbutton
+  Cut ratio(8:5) pushbutton:
+    name: Cut ratio(8:5) pushbutton
+  Cut ratio(16:9) pushbutton:
+    name: Cut ratio(16:9) pushbutton
+  Cut ratio(free) pushbutton:
+    name: Cut ratio(free) pushbutton
+  Cut ratio(Original) pushbutton:
+    name: Cut ratio(Original) pushbutton
+  Cut done pushbutton:
+    name: Cut done pushbutton
+  Cut cancel pushbutton:
+    name: Cut cancel pushbutton
+  CutHeightLineEdit:
+    accessible_id: CutHeightLineEdit
+  CutWidthLineEdit:
+    accessible_id: CutWidthLineEdit
+  FreeBtn:
+    accessible_id: FreeBtn
+  ScaleBtn11:
+    accessible_id: ScaleBtn11
+  ScaleBtn169:
+    accessible_id: ScaleBtn169
+  ScaleBtn23:
+    accessible_id: ScaleBtn23
+  ScaleBtn85:
+    accessible_id: ScaleBtn85
+  MenuComboBox:
+    accessible_id: MenuComboBox
+  Notice cut info dialog:
+    name: Notice cut info dialog
+  Select tool button:
+    name: Select tool button

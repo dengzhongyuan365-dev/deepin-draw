@@ -1,0 +1,214 @@
+name: 绘制工具_suite
+app: deepin-draw
+module: 绘制工具
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_绘制工具_001_s1
+  name: '[503]结束绘制-ESC'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: escape
+  - step_type: action
+    action: element_action
+    selector:
+      name: Polygon tool button
+    do: focus
+    wait: 0.3
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_绘制工具_002_s1
+  name: '[502]结束绘制-点击工具栏选择工具'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Triangle tool button
+    do: click
+    wait: 1.0
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Triangle tool button
+- id: suite_绘制工具_003_s1
+  name: '[006][smoke]矩形-绘制矩形'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_绘制工具_006_s1
+  name: '[007、101][smoke]矩形-属性-填充'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: fill color button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_绘制工具_008_s1
+  name: '[363][smoke][acp1]矩形-属性-粗细'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: stroken color button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExpBtn
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_绘制工具_013_s1
+  name: '[011][smoke]矩形-修改属性后绘制'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: fill color button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: stroken color button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExpBtn
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_绘制工具_015_s1
+  name: '[380][core][acp1]矩形-修改填充颜色后绘制'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: fill color button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: PickColorWidget
+    do: click
+    wait: 1.0
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_绘制工具_075_s1
+  name: '[102]多图属性-填充和描边的属性记忆'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: fill color button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: stroken color button
+    do: click
+    wait: 1.0
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+teardown:
+- action: session_stop

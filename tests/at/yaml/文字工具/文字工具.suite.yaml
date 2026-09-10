@@ -1,0 +1,103 @@
+name: 文字工具_suite
+app: deepin-draw
+module: 文字工具
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_文字工具_001_s1
+  name: '[038][smoke]文字-单击绘制文本框'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Text tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: element_action
+    selector:
+      name: Text color button
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Text font style comboBox
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: TextMenu
+    do: focus
+    wait: 0.3
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Text tool button
+- id: suite_文字工具_002_s1
+  name: '[314][smoke][acp1]文字-快捷键T'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Text tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Text tool button
+- id: suite_文字工具_012_s1
+  name: '[core]文字-默认字体'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Text tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: element_action
+    selector:
+      name: Text font family comboBox
+    do: click
+    wait: 0.5
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Text tool button
+- id: suite_文字工具_022_s1
+  name: 粘贴文字后撤销、还原
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Text tool button
+    do: click
+    wait: 1.0
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Text tool button
+teardown:
+- action: session_stop

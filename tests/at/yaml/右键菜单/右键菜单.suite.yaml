@@ -1,0 +1,52 @@
+name: 右键菜单_suite
+app: deepin-draw
+module: 右键菜单
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_右键菜单_001_s1
+  name: '[536]右键菜单选项'
+  description: ''
+  steps:
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_右键菜单_002_s1
+  name: '[534]图层的二级菜单'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: LayerMenu
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+teardown:
+- action: session_stop

@@ -1,0 +1,2809 @@
+version: '1.0'
+cases:
+- id: suite_主菜单_001_s1
+  name: '[508]主菜单UI显示'
+  module: 主菜单
+  steps:
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  - step_type: action
+    action: element_action
+    selector:
+      name: MainWindow
+    do: focus
+    wait: 0.3
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MainWindow
+- id: suite_主菜单_002_s1
+  name: 打开-支持的格式
+  module: 主菜单
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Import tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  - step_type: action
+    action: element_action
+    selector:
+      name: LeftTool bar
+    do: focus
+    wait: 0.3
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Import tool button
+      role: push button
+- id: suite_主菜单_003_s1
+  name: '[078][core]主菜单-新建标签页'
+  module: 主菜单
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: MultipTabBarWidget
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_主菜单_004_s1
+  name: 打开-主菜单中打开支持的格式
+  module: 主菜单
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_主菜单_005_s1
+  name: 打开-快捷键Ctrl+O
+  module: 主菜单
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+o
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_主菜单_008_s1
+  name: '[052]打印-打印为PDF'
+  module: 主菜单
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: p
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  - step_type: action
+    action: element_action
+    selector:
+      name: DDFSaveDialog
+    do: focus
+    wait: 0.3
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: DDFSaveDialog
+- id: suite_主菜单_009_s1
+  name: 打印-打印为另存为图片
+  module: 主菜单
+  steps:
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_主菜单_012_s1
+  name: 打印-多个标签页时进行打印操作
+  module: 主菜单
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: MultipTabBarWidget
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_主菜单_013_s1
+  name: 打印-多次打印文件
+  module: 主菜单
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: MultipTabBarWidget
+    do: click
+    wait: 1.0
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_主菜单_014_s1
+  name: 主题-主题的二级菜单
+  module: 主菜单
+  steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_主菜单_019_s1
+  name: 主题-最小化画板将保存主题设置
+  module: 主菜单
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: ColorSlider
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: ColorLabel
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: ColorLineEdit
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: ColorfulBtn
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: RedEditLabel
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: GreenEditLabel
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: BlueEditLabel
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: PickColorPickerButton
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: ColorPickWidget
+    do: focus
+    wait: 0.3
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: ColorSlider
+- id: suite_主菜单_024_s1
+  name: 帮助-帮助文档内容检查
+  module: 主菜单
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Text tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: TextEditor
+    do: focus
+    wait: 0.3
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Text tool button
+- id: suite_主菜单_033_s1
+  name: '[005][smoke]编辑画板后退出，修改设置后确认保存'
+  module: 主菜单
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: FileNameEdit
+    do: focus
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: SavePathCombox
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: FileNameEdit
+      role: text
+- id: suite_保存_001_s1
+  name: '[400][smoke][acp1]首次保存-确认保存'
+  module: 保存
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: SavePathCombox
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: SavePathCombox
+      role: combo box
+- id: suite_保存_002_s1
+  name: '[399][smoke][acp1]另存为-确认保存'
+  module: 保存
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_保存_003_s1
+  name: '[506]保存-文件名与标签页名一致'
+  module: 保存
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: MultipTabBarWidget
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+s
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_保存_004_s1
+  name: '[426][core][acp1]保存-修改保存路径后，重启画板，路径被保存'
+  module: 保存
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+s
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_保存_013_s1
+  name: '[core]选择图片打开画板-打开一张jpeg格式图片进行保存'
+  module: 保存
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Text tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: SavePathCombox
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: action
+    action: element_action
+    selector:
+      name: BlurWidget
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: BlurPenWidth
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Masic type button
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Color Alpha slider
+    do: focus
+    wait: 0.3
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Text tool button
+- id: suite_保存_014_s1
+  name: '[403][core][acp1]选择图片打开画板-打开一张bmp格式图片进行保存'
+  module: 保存
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Text tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: SavePathCombox
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Text tool button
+- id: suite_保存_017_s1
+  name: '[389][smoke][acp1]保存-快捷键Ctrl+S'
+  module: 保存
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Line tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+s
+  - step_type: action
+    action: element_action
+    selector:
+      name: Line start style combox
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      name: Line end style combox
+    do: click
+    wait: 0.5
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Line tool button
+- id: suite_保存_021_s1
+  name: '[468]保存相同文件提示框-替换按钮'
+  module: 保存
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+s
+  - step_type: action
+    action: element_action
+    selector:
+      name: MessageDlg
+    do: focus
+    wait: 0.5
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MessageDlg
+- id: suite_保存_023_s1
+  name: '[110][smoke]保存-保存不同属性的图元'
+  module: 保存
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: element_action
+    selector:
+      name: TopToolbar
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: ComAttrWidget
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: _pExpWidget
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: groupButton
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: unGroupButton
+    do: focus
+    wait: 0.3
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: TopToolbar
+- id: suite_全选_001_s1
+  name: '[058][smoke][acp1]全选-右键菜单全选'
+  module: 全选
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 全选
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_全选_002_s1
+  name: '[058][smoke][acp1]全选快捷键-Ctrl+A'
+  module: 全选
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+a
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_删除_001_s1
+  name: '[059][acp1][smoke]右键菜单-删除'
+  module: 删除
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 删除
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_删除_002_s1
+  name: '[112][acp1][smoke]删除快捷键-Delet'
+  module: 删除
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: delete
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_删除_003_s1
+  name: 属性栏-删除图元后属性栏变化
+  module: 删除
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: fill color button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: delete
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_剪切_复制_粘贴_001_s1
+  name: '[057][smoke][acp1]复制与粘贴'
+  module: 剪切_复制_粘贴
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_剪切_复制_粘贴_002_s1
+  name: '[056][smoke][acp1]剪切操作'
+  module: 剪切_复制_粘贴
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_剪切_复制_粘贴_005_s1
+  name: '[165][smoke][acp1]粘贴快捷键-Ctrl+V'
+  module: 剪切_复制_粘贴
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+c
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_剪切_复制_粘贴_007_s1
+  name: '[522]粘贴位置-当前标签页'
+  module: 剪切_复制_粘贴
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: MultipTabBarWidget
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+c
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_剪切_复制_粘贴_009_s1
+  name: 图片-文管复制图片粘贴到画板
+  module: 剪切_复制_粘贴
+  steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_剪切_复制_粘贴_011_s1
+  name: '[520]文字-粘贴文字后撤销、还原'
+  module: 剪切_复制_粘贴
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Text tool button
+    do: click
+    wait: 1.0
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Text tool button
+- id: suite_右键菜单_001_s1
+  name: '[536]右键菜单选项'
+  module: 右键菜单
+  steps:
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_右键菜单_002_s1
+  name: '[534]图层的二级菜单'
+  module: 右键菜单
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: LayerMenu
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_图像绘制公共能力_001_s1
+  name: '[smoke][acp1]画笔-绘制画笔图案'
+  module: 图像绘制公共能力
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Pencil tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Pencil tool button
+      role: push button
+- id: suite_图像绘制公共能力_002_s1
+  name: 画笔-默认属性
+  module: 图像绘制公共能力
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Pencil tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Pencil tool button
+      role: push button
+- id: suite_图像绘制公共能力_007_s1
+  name: 样式-修改矩形图案样式属性
+  module: 图像绘制公共能力
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExpBtn
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: p
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: Width Label
+    do: focus
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      name: CSideWidthWidget
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: CSpinBox
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: CTextEdit
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: AttrSpinBox
+    do: focus
+    wait: 0.3
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_图层_001_s1
+  name: '[532]组合-点选组合和单个图元进行组合后的图层'
+  module: 图层
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Ellipse tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: UnGroupButton
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: t
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExpGroupBtn
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExpUnGroupBtn
+    do: click
+    wait: 0.5
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Ellipse tool button
+- id: suite_图层_002_s1
+  name: '[530]组合-框选组合和单个图元进行组合后的图层'
+  module: 图层
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Ellipse tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: GroupButton
+    do: click
+    wait: 1.0
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Ellipse tool button
+- id: suite_图层_003_s1
+  name: '[528]组合-点选组合图元后再次组合的图层'
+  module: 图层
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: GroupButton
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: t
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: GroupButton
+- id: suite_图层_004_s1
+  name: '[526]组合-按住shift键点击选择图元组合后各图元图层'
+  module: 图层
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: GroupButton
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: t
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_图片工具_001_s1
+  name: '[549]导入/粘贴图片-粘贴图片小于画布的图片'
+  module: 图片工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Import tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+v
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Import tool button
+      role: push button
+- id: suite_图片工具_002_s1
+  name: '[548]导入/粘贴图片-导入图片小于画布的图片'
+  module: 图片工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Import tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Import tool button
+      role: push button
+- id: suite_图片工具_004_s1
+  name: '[546]导入/粘贴图片-弹窗''保留原图尺寸'''
+  module: 图片工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Import tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: sizeWidget
+    do: focus
+    wait: 0.3
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Import tool button
+      role: push button
+- id: suite_图片工具_005_s1
+  name: 导入/粘贴图片-选择多张图片导入点击关闭按钮
+  module: 图片工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Import tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Import tool button
+      role: push button
+- id: suite_图片工具_007_s1
+  name: '[545]图片选画板打开-图片尺寸小于默认画布尺寸'
+  module: 图片工具
+  steps:
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_图片工具_013_s1
+  name: '[469]交互-打开大于画布的不同格式图片后进行保存'
+  module: 图片工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Import tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  - step_type: action
+    action: element_action
+    selector:
+      name: Notice save dialog
+    do: focus
+    wait: 0.5
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Import tool button
+      role: push button
+- id: suite_图片工具_014_s1
+  name: '[020][core]图片-属性-水平翻转'
+  module: 图片工具
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_多图属性展示与修改_001_s1
+  name: '[466]多图属性-修改组合属性后释放组合，检查各组合图元属性'
+  module: 多图属性展示与修改
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: UnGroupButton
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExpBtn
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+g
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: AttrComboBox
+    do: click
+    wait: 0.5
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_多图属性展示与修改_002_s1
+  name: '[465]调色盘-不透明度默认值'
+  module: 多图属性展示与修改
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: AlphaSlider
+    do: focus
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: PickColorWidget
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: AlphaLabel
+    do: focus
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: CAlphaControlWidget
+    do: focus
+    wait: 0.3
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: AlphaSlider
+      role: slider
+- id: suite_多图属性展示与修改_003_s1
+  name: '[054、121]多图属性-选中两个不同的矩形编辑属性'
+  module: 多图属性展示与修改
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: fill color button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExpBtn
+    do: click
+    wait: 1.0
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_多图属性展示与修改_004_s1
+  name: '[464]多图属性-两个不同填充的图元同时修改不透明度'
+  module: 多图属性展示与修改
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: fill color button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: AlphaSlider
+    do: focus
+    wait: 0.5
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: fill color button
+- id: suite_多图属性展示与修改_005_s1
+  name: '[123]多图属性-多图元组合后检查顶部属性栏展示'
+  module: 多图属性展示与修改
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: GroupButton
+    do: click
+    wait: 1.0
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: GroupButton
+- id: suite_对齐_001_s1
+  name: '[538]对齐-单个图元的对齐菜单'
+  module: 对齐
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Triangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: AlignMenu
+      role: menu
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Triangle tool button
+- id: suite_对齐_002_s1
+  name: '[066][core][acp1]底对齐-单个图元底对齐'
+  module: 对齐
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Ellipse tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: AlignMenu
+      role: menu
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Ellipse tool button
+- id: suite_对齐_003_s1
+  name: '[065][core][acp1]顶对齐-单个图元顶对齐'
+  module: 对齐
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: AlignMenu
+      role: menu
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: AlignMenu
+      role: menu
+- id: suite_对齐_012_s1
+  name: '[537]垂直等间距-多个图片垂直等间距'
+  module: 对齐
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: AlignMenu
+      role: menu
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: AlignMenu
+      role: menu
+- id: suite_导出_001_s1
+  name: 导出界面-导出默认界面显示
+  module: 导出
+  steps:
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: IncreaseBtn
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ReduceBtn
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: OriginalBtn
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: ProgressDialog
+    do: focus
+    wait: 0.3
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_导出_002_s1
+  name: 图片尺寸-默认选中百分比
+  module: 导出
+  steps:
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_导出_003_s1
+  name: 百分比-修改方式-点击控件
+  module: 导出
+  steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_导出_004_s1
+  name: 百分比-键盘输入-输入非数字
+  module: 导出
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+e
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_导出_005_s1
+  name: '[543]取消导出界面不会保持设置'
+  module: 导出
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: CancelBtn
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+e
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: CancelBtn
+      role: push button
+- id: suite_导出_007_s1
+  name: '[178][smoke][acp1]导出-设置百分比后导出'
+  module: 导出
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: FormatCombox
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExportPathEditor
+    do: focus
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      name: Export format comboBox
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      name: Export path comboBox
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      name: Export quality slider
+    do: focus
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      name: Export content widget
+    do: focus
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      name: Export dialog
+    do: focus
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExportPathChosenButton
+    do: click
+    wait: 0.3
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: FormatCombox
+      role: combo box
+- id: suite_导出_008_s1
+  name: '[177][smoke][acp1]导出-设置像素后导出'
+  module: 导出
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: FormatCombox
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: QualitySlider
+    do: focus
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      name: Export name line editor
+    do: focus
+    wait: 0.5
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: FormatCombox
+      role: combo box
+- id: suite_导出_011_s1
+  name: 导出-裁剪后导出
+  module: 导出
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Crop tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: DoneBtn
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: scene cut attribution widget
+    do: focus
+    wait: 0.3
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Crop tool button
+- id: suite_导出_014_s1
+  name: '[276][smoke][acp1]导出-导出为png格式'
+  module: 导出
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: FormatCombox
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: SavePathCombox
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+e
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: FormatCombox
+      role: combo box
+- id: suite_导出_019_s1
+  name: '[051][core]导出-主菜单导出按钮'
+  module: 导出
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_属性栏与窗口交互_001_s1
+  name: '[201][core][acp1]属性栏-选中画笔图元，属性栏展示'
+  module: 属性栏与窗口交互
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Pencil tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: escape
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Pencil tool button
+      role: push button
+- id: suite_打开关闭_001_s1
+  name: '[002、108][smoke]打开-桌面双击ddf文件打开'
+  module: 打开关闭
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_打开关闭_002_s1
+  name: 打开-使用画板打开不支持格式的图片
+  module: 打开关闭
+  steps:
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_打开关闭_003_s1
+  name: '[388][smoke][acp1]打开-使用画板打开支持格式的图片'
+  module: 打开关闭
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_打开关闭_008_s1
+  name: 打开-画板未启动时，打开单个无读权限的ddf文件
+  module: 打开关闭
+  steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_撤销_重做_001_s1
+  name: '[061][smoke][acp1]右键菜单-重做操作'
+  module: 撤销_重做
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 重做
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_撤销_重做_002_s1
+  name: '[169][smoke][acp1]撤销快捷键-Ctrl+Z'
+  module: 撤销_重做
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Triangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+z
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Triangle tool button
+- id: suite_文字工具_001_s1
+  name: '[038][smoke]文字-单击绘制文本框'
+  module: 文字工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Text tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: element_action
+    selector:
+      name: Text color button
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Text font style comboBox
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: TextMenu
+    do: focus
+    wait: 0.3
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Text tool button
+- id: suite_文字工具_002_s1
+  name: '[314][smoke][acp1]文字-快捷键T'
+  module: 文字工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Text tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Text tool button
+- id: suite_文字工具_012_s1
+  name: '[core]文字-默认字体'
+  module: 文字工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Text tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: element_action
+    selector:
+      name: Text font family comboBox
+    do: click
+    wait: 0.5
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Text tool button
+- id: suite_文字工具_022_s1
+  name: 粘贴文字后撤销、还原
+  module: 文字工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Text tool button
+    do: click
+    wait: 1.0
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Text tool button
+- id: suite_标签页_001_s1
+  name: 标签页-Ctrl+N新增标签页
+  module: 标签页
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: MultipTabBarWidget
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+n
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_标签页_004_s1
+  name: 标签页-关闭空白标签页
+  module: 标签页
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: MultipTabBarWidget
+    do: click
+    wait: 1.0
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_标签页_009_s1
+  name: 标签页的右键菜单选项
+  module: 标签页
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: MultipTabBarWidget
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+n
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_标签页_010_s1
+  name: 标签页-关闭标签页-空白画布
+  module: 标签页
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: MultipTabBarWidget
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_标签页_016_s1
+  name: '[417][core][acp1]标签页-打开ddf文件'
+  module: 标签页
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: MultipTabBarWidget
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_模糊工具_001_s1
+  name: '[515]模糊-粗细-点击控件调整属性值大小'
+  module: 模糊工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Blur tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExpBtn
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: Width
+    do: focus
+    wait: 0.3
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Blur tool button
+- id: suite_模糊工具_002_s1
+  name: '[566]模糊-快捷键B'
+  module: 模糊工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Blur tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: b
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Blur tool button
+- id: suite_模糊工具_006_s1
+  name: '[135][core]组合中含有一张图片进行模糊操作'
+  module: 模糊工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Blur tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: GroupButton
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Blur tool button
+- id: suite_模糊工具_008_s1
+  name: '[140][core]修改模糊类型属性'
+  module: 模糊工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Blur tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: element_action
+    selector:
+      name: Blur type button
+    do: click
+    wait: 0.5
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Blur tool button
+- id: suite_模糊工具_011_s1
+  name: '[109][core]保存-保存后继续绘制图元后再次保存'
+  module: 模糊工具
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+s
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_橡皮擦_001_s1
+  name: '[229]快捷键-橡皮擦快捷键E'
+  module: 橡皮擦
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Eraser tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Eraser tool button
+- id: suite_橡皮擦_002_s1
+  name: '[238]粗细-输入数值调整属性值大小'
+  module: 橡皮擦
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Eraser tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExpBtn
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Eraser tool button
+- id: suite_橡皮擦_003_s1
+  name: '[229橡皮擦连续擦除'
+  module: 橡皮擦
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Eraser tool button
+    do: click
+    wait: 1.0
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Eraser tool button
+- id: suite_用户场景_001_s1
+  name: '[559][acp3]覆盖导出时，被覆盖的文件被修改能正常导出'
+  module: 用户场景
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: FormatCombox
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: FileNameEdit
+    do: focus
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: SavePathCombox
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+e
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: FormatCombox
+      role: combo box
+- id: suite_画布_001_s1
+  name: 画布-使用手形工具向下拖动画布
+  module: 画布
+  steps:
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ScanleBtn
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ZoomMenu
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Zoom Menu
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Zoom Menu button
+    do: focus
+    wait: 0.3
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_画布_002_s1
+  name: 画布-使用手形工具向上拖动画布
+  module: 画布
+  steps:
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_画布_005_s1
+  name: '[415][core][acp1]画布-手形工具选中图元情况下拖拽画布'
+  module: 画布
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_画布_007_s1
+  name: 画布-调整画布大小至25%
+  module: 画布
+  steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_画布_010_s1
+  name: '[416][core][acp1]画布-查看调整画布大小选项'
+  module: 画布
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_画布_013_s1
+  name: 画布-缩放中心点检查
+  module: 画布
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: element_action
+    selector:
+      name: Zoom Form
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Zoom increase button
+    do: click
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Zoom reduce button
+    do: click
+    wait: 0.3
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Zoom Form
+- id: suite_画布_017_s1
+  name: 画布-缩小画布使用手形工具调整画布区域
+  module: 画布
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Zoom reduce button
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Zoom reduce button
+- id: suite_画布_018_s1
+  name: '[393][smoke][acp1]画布-放大画布使用手形工具调整画布区域'
+  module: 画布
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: element_action
+    selector:
+      name: Zoom increase button
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Zoom increase button
+- id: suite_画布_026_s1
+  name: 画布-画布在10%大小时，点击画布缩小按钮
+  module: 画布
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: element_action
+    selector:
+      name: Zoom reduce button
+    do: click
+    wait: 0.5
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Zoom reduce button
+- id: suite_画布_027_s1
+  name: 画布-画布为100%大小时，点击画布放大按钮
+  module: 画布
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Zoom increase button
+    do: click
+    wait: 0.5
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Zoom increase button
+- id: suite_画板_001_s1
+  name: 【玲珑】【画板】玲珑应用，基本功能测试
+  module: 画板
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: FormatCombox
+    do: click
+    wait: 1.0
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: FormatCombox
+      role: combo box
+- id: suite_画笔_001_s1
+  name: '[291][smoke][acp1]绘制画笔图元'
+  module: 画笔
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Pencil tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Pencil tool button
+      role: push button
+- id: suite_画笔_002_s1
+  name: '[290][core][acp1]画笔-粗细1px'
+  module: 画笔
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Pencil tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExpBtn
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Pencil tool button
+      role: push button
+- id: suite_画笔_012_s1
+  name: '[209]选中图元,选择画笔工具取消选中图元'
+  module: 画笔
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_组合_释放组合_001_s1
+  name: '[118、159][core][acp1]快捷键-释放组合Ctrl+Shift+G'
+  module: 组合_释放组合
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+shift+g
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_组合_释放组合_003_s1
+  name: 快捷键-选择一个组合的快捷键
+  module: 组合_释放组合
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+g
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_组合_释放组合_005_s1
+  name: '[518]组合-选择不同起点终点的直线点击属性栏组合'
+  module: 组合_释放组合
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Line tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: GroupButton
+    do: click
+    wait: 1.0
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Line tool button
+- id: suite_组合_释放组合_007_s1
+  name: '[517]组合-选择不同锚点的星形右键菜单进行组合'
+  module: 组合_释放组合
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Star tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 组合
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Star tool button
+- id: suite_组合_释放组合_013_s1
+  name: '[509]属性-释放组合后修改图元属性'
+  module: 组合_释放组合
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: UnGroupButton
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: fill color button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 组合
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: UnGroupButton
+- id: suite_绘制工具_001_s1
+  name: '[503]结束绘制-ESC'
+  module: 绘制工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: escape
+  - step_type: action
+    action: element_action
+    selector:
+      name: Polygon tool button
+    do: focus
+    wait: 0.3
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_绘制工具_002_s1
+  name: '[502]结束绘制-点击工具栏选择工具'
+  module: 绘制工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Triangle tool button
+    do: click
+    wait: 1.0
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Triangle tool button
+- id: suite_绘制工具_003_s1
+  name: '[006][smoke]矩形-绘制矩形'
+  module: 绘制工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_绘制工具_006_s1
+  name: '[007、101][smoke]矩形-属性-填充'
+  module: 绘制工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: fill color button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_绘制工具_008_s1
+  name: '[363][smoke][acp1]矩形-属性-粗细'
+  module: 绘制工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: stroken color button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExpBtn
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_绘制工具_013_s1
+  name: '[011][smoke]矩形-修改属性后绘制'
+  module: 绘制工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: fill color button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: stroken color button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExpBtn
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_绘制工具_015_s1
+  name: '[380][core][acp1]矩形-修改填充颜色后绘制'
+  module: 绘制工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: fill color button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: PickColorWidget
+    do: click
+    wait: 1.0
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_绘制工具_075_s1
+  name: '[102]多图属性-填充和描边的属性记忆'
+  module: 绘制工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: fill color button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: stroken color button
+    do: click
+    wait: 1.0
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_裁剪工具_001_s1
+  name: 裁剪-尺寸与比例
+  module: 裁剪工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Crop tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: Cut ratio(1:1) pushbutton
+    do: click
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Cut ratio(2:3) pushbutton
+    do: click
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Cut ratio(8:5) pushbutton
+    do: click
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Cut ratio(16:9) pushbutton
+    do: click
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Cut ratio(free) pushbutton
+    do: click
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Cut ratio(Original) pushbutton
+    do: click
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Cut done pushbutton
+    do: click
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Cut cancel pushbutton
+    do: click
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: CutHeightLineEdit
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: CutWidthLineEdit
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: FreeBtn
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ScaleBtn11
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ScaleBtn169
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ScaleBtn23
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ScaleBtn85
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: MenuComboBox
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Notice cut info dialog
+    do: focus
+    wait: 0.3
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Crop tool button
+- id: suite_裁剪工具_002_s1
+  name: 裁剪尺寸范围
+  module: 裁剪工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Crop tool button
+    do: click
+    wait: 1.0
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Crop tool button
+- id: suite_裁剪工具_004_s1
+  name: '[281][core][acp1]裁剪-鼠标调整裁剪区域大小'
+  module: 裁剪工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Crop tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Crop tool button
+- id: suite_裁剪工具_011_s1
+  name: '[277][smoke][acp1]保存裁剪方式'
+  module: 裁剪工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Crop tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: DoneBtn
+    do: click
+    wait: 1.0
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Crop tool button
+- id: suite_触摸屏_001_s1
+  name: 关闭画板
+  module: 触摸屏
+  steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_调色盘_001_s1
+  name: '[427][core]调色盘-取色器默认样式检查'
+  module: 调色盘
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: PickColorWidget
+    do: click
+    wait: 1.0
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: PickColorWidget
+- id: suite_选择工具_001_s1
+  name: '[181][core][acp1]图片-选择单张图片属性栏展示'
+  module: 选择工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Import tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: element_action
+    selector:
+      name: Select tool button
+    do: focus
+    wait: 0.3
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Import tool button
+      role: push button
+- id: suite_选择工具_002_s1
+  name: '[103]画笔选中框-调节点击所绘制的画笔图案的选中框'
+  module: 选择工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Pencil tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: escape
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Pencil tool button
+      role: push button
+- id: suite_选择工具_003_s1
+  name: 橡皮擦区域无法单击选中
+  module: 选择工具
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Eraser tool button
+    do: click
+    wait: 1.0
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Eraser tool button

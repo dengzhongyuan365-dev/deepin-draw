@@ -1,0 +1,143 @@
+name: 多图属性展示与修改_suite
+app: deepin-draw
+module: 多图属性展示与修改
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_多图属性展示与修改_001_s1
+  name: '[466]多图属性-修改组合属性后释放组合，检查各组合图元属性'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: UnGroupButton
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExpBtn
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+g
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: AttrComboBox
+    do: click
+    wait: 0.5
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_多图属性展示与修改_002_s1
+  name: '[465]调色盘-不透明度默认值'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: AlphaSlider
+    do: focus
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: PickColorWidget
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: AlphaLabel
+    do: focus
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: CAlphaControlWidget
+    do: focus
+    wait: 0.3
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: AlphaSlider
+      role: slider
+- id: suite_多图属性展示与修改_003_s1
+  name: '[054、121]多图属性-选中两个不同的矩形编辑属性'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: fill color button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExpBtn
+    do: click
+    wait: 1.0
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_多图属性展示与修改_004_s1
+  name: '[464]多图属性-两个不同填充的图元同时修改不透明度'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: fill color button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: AlphaSlider
+    do: focus
+    wait: 0.5
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: fill color button
+- id: suite_多图属性展示与修改_005_s1
+  name: '[123]多图属性-多图元组合后检查顶部属性栏展示'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: GroupButton
+    do: click
+    wait: 1.0
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: GroupButton
+teardown:
+- action: session_stop

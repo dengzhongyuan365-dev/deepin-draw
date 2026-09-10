@@ -1,0 +1,115 @@
+name: 模糊工具_suite
+app: deepin-draw
+module: 模糊工具
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_模糊工具_001_s1
+  name: '[515]模糊-粗细-点击控件调整属性值大小'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Blur tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExpBtn
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: Width
+    do: focus
+    wait: 0.3
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Blur tool button
+- id: suite_模糊工具_002_s1
+  name: '[566]模糊-快捷键B'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Blur tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: b
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Blur tool button
+- id: suite_模糊工具_006_s1
+  name: '[135][core]组合中含有一张图片进行模糊操作'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Blur tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: GroupButton
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Blur tool button
+- id: suite_模糊工具_008_s1
+  name: '[140][core]修改模糊类型属性'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Blur tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: element_action
+    selector:
+      name: Blur type button
+    do: click
+    wait: 0.5
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Blur tool button
+- id: suite_模糊工具_011_s1
+  name: '[109][core]保存-保存后继续绘制图元后再次保存'
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+s
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+teardown:
+- action: session_stop

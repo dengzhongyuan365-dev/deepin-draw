@@ -1,0 +1,67 @@
+name: 橡皮擦_suite
+app: deepin-draw
+module: 橡皮擦
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_橡皮擦_001_s1
+  name: '[229]快捷键-橡皮擦快捷键E'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Eraser tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Eraser tool button
+- id: suite_橡皮擦_002_s1
+  name: '[238]粗细-输入数值调整属性值大小'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Eraser tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExpBtn
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Eraser tool button
+- id: suite_橡皮擦_003_s1
+  name: '[229橡皮擦连续擦除'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Eraser tool button
+    do: click
+    wait: 1.0
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Eraser tool button
+teardown:
+- action: session_stop

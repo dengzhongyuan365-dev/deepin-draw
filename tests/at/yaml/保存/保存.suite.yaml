@@ -1,0 +1,253 @@
+name: 保存_suite
+app: deepin-draw
+module: 保存
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_保存_001_s1
+  name: '[400][smoke][acp1]首次保存-确认保存'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: SavePathCombox
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: SavePathCombox
+      role: combo box
+- id: suite_保存_002_s1
+  name: '[399][smoke][acp1]另存为-确认保存'
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_保存_003_s1
+  name: '[506]保存-文件名与标签页名一致'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: MultipTabBarWidget
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+s
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_保存_004_s1
+  name: '[426][core][acp1]保存-修改保存路径后，重启画板，路径被保存'
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+s
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_保存_013_s1
+  name: '[core]选择图片打开画板-打开一张jpeg格式图片进行保存'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Text tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: SavePathCombox
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: action
+    action: element_action
+    selector:
+      name: BlurWidget
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: BlurPenWidth
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Masic type button
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Color Alpha slider
+    do: focus
+    wait: 0.3
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Text tool button
+- id: suite_保存_014_s1
+  name: '[403][core][acp1]选择图片打开画板-打开一张bmp格式图片进行保存'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Text tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: SavePathCombox
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Text tool button
+- id: suite_保存_017_s1
+  name: '[389][smoke][acp1]保存-快捷键Ctrl+S'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Line tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+s
+  - step_type: action
+    action: element_action
+    selector:
+      name: Line start style combox
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      name: Line end style combox
+    do: click
+    wait: 0.5
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Line tool button
+- id: suite_保存_021_s1
+  name: '[468]保存相同文件提示框-替换按钮'
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+s
+  - step_type: action
+    action: element_action
+    selector:
+      name: MessageDlg
+    do: focus
+    wait: 0.5
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MessageDlg
+- id: suite_保存_023_s1
+  name: '[110][smoke]保存-保存不同属性的图元'
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: element_action
+    selector:
+      name: TopToolbar
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: ComAttrWidget
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: _pExpWidget
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: groupButton
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: unGroupButton
+    do: focus
+    wait: 0.3
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: TopToolbar
+teardown:
+- action: session_stop

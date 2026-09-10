@@ -1,0 +1,40 @@
+name: 全选_suite
+app: deepin-draw
+module: 全选
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_全选_001_s1
+  name: '[058][smoke][acp1]全选-右键菜单全选'
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 全选
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_全选_002_s1
+  name: '[058][smoke][acp1]全选快捷键-Ctrl+A'
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+a
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+teardown:
+- action: session_stop

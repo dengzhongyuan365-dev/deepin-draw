@@ -1,0 +1,52 @@
+name: 撤销_重做_suite
+app: deepin-draw
+module: 撤销_重做
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_撤销_重做_001_s1
+  name: '[061][smoke][acp1]右键菜单-重做操作'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 重做
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_撤销_重做_002_s1
+  name: '[169][smoke][acp1]撤销快捷键-Ctrl+Z'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Triangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+z
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Triangle tool button
+teardown:
+- action: session_stop

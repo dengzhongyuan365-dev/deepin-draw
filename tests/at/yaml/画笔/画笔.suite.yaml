@@ -1,0 +1,71 @@
+name: 画笔_suite
+app: deepin-draw
+module: 画笔
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_画笔_001_s1
+  name: '[291][smoke][acp1]绘制画笔图元'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Pencil tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Pencil tool button
+      role: push button
+- id: suite_画笔_002_s1
+  name: '[290][core][acp1]画笔-粗细1px'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Pencil tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExpBtn
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Pencil tool button
+      role: push button
+- id: suite_画笔_012_s1
+  name: '[209]选中图元,选择画笔工具取消选中图元'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+teardown:
+- action: session_stop

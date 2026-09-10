@@ -1,0 +1,19 @@
+name: 触摸屏_suite
+app: deepin-draw
+module: 触摸屏
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_触摸屏_001_s1
+  name: 关闭画板
+  description: ''
+  steps: []
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+teardown:
+- action: session_stop

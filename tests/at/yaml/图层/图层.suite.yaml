@@ -1,0 +1,109 @@
+name: 图层_suite
+app: deepin-draw
+module: 图层
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_图层_001_s1
+  name: '[532]组合-点选组合和单个图元进行组合后的图层'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Ellipse tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: UnGroupButton
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: t
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExpGroupBtn
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExpUnGroupBtn
+    do: click
+    wait: 0.5
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Ellipse tool button
+- id: suite_图层_002_s1
+  name: '[530]组合-框选组合和单个图元进行组合后的图层'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Ellipse tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: GroupButton
+    do: click
+    wait: 1.0
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Ellipse tool button
+- id: suite_图层_003_s1
+  name: '[528]组合-点选组合图元后再次组合的图层'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: GroupButton
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: t
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: GroupButton
+- id: suite_图层_004_s1
+  name: '[526]组合-按住shift键点击选择图元组合后各图元图层'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: GroupButton
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: t
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+teardown:
+- action: session_stop

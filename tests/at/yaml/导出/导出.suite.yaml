@@ -1,0 +1,260 @@
+name: 导出_suite
+app: deepin-draw
+module: 导出
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_导出_001_s1
+  name: 导出界面-导出默认界面显示
+  description: ''
+  steps:
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: IncreaseBtn
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ReduceBtn
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: OriginalBtn
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: ProgressDialog
+    do: focus
+    wait: 0.3
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_导出_002_s1
+  name: 图片尺寸-默认选中百分比
+  description: ''
+  steps:
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_导出_003_s1
+  name: 百分比-修改方式-点击控件
+  description: ''
+  steps: []
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_导出_004_s1
+  name: 百分比-键盘输入-输入非数字
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+e
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_导出_005_s1
+  name: '[543]取消导出界面不会保持设置'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: CancelBtn
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+e
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: CancelBtn
+      role: push button
+- id: suite_导出_007_s1
+  name: '[178][smoke][acp1]导出-设置百分比后导出'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: FormatCombox
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExportPathEditor
+    do: focus
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      name: Export format comboBox
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      name: Export path comboBox
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      name: Export quality slider
+    do: focus
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      name: Export content widget
+    do: focus
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      name: Export dialog
+    do: focus
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ExportPathChosenButton
+    do: click
+    wait: 0.3
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: FormatCombox
+      role: combo box
+- id: suite_导出_008_s1
+  name: '[177][smoke][acp1]导出-设置像素后导出'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: FormatCombox
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: QualitySlider
+    do: focus
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      name: Export name line editor
+    do: focus
+    wait: 0.5
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: FormatCombox
+      role: combo box
+- id: suite_导出_011_s1
+  name: 导出-裁剪后导出
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Crop tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: DoneBtn
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: scene cut attribution widget
+    do: focus
+    wait: 0.3
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Crop tool button
+- id: suite_导出_014_s1
+  name: '[276][smoke][acp1]导出-导出为png格式'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: FormatCombox
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: SavePathCombox
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+e
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: FormatCombox
+      role: combo box
+- id: suite_导出_019_s1
+  name: '[051][core]导出-主菜单导出按钮'
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+teardown:
+- action: session_stop

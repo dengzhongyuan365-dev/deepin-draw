@@ -1,0 +1,30 @@
+name: 属性栏与窗口交互_suite
+app: deepin-draw
+module: 属性栏与窗口交互
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_属性栏与窗口交互_001_s1
+  name: '[201][core][acp1]属性栏-选中画笔图元，属性栏展示'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Pencil tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: escape
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Pencil tool button
+      role: push button
+teardown:
+- action: session_stop

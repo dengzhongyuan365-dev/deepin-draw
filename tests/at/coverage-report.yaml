@@ -1,0 +1,21 @@
+scan_total: 109
+transient_items:
+- name: MainMenu
+  role: menu
+  ui_name: 主菜单
+  locator: name
+- name: MainMenu
+  role: menu
+  ui_name: 窗口右上角主菜单
+  locator: name
+- name: MainMenu
+  role: menu
+  ui_name: 画板主菜单
+  locator: name
+unreachable: 0
+denominator: 109
+covered: 109
+uncovered: 0
+coverage: 100.0
+passed: true
+uncovered_elements: []

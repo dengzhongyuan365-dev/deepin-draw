@@ -1,0 +1,110 @@
+name: 标签页_suite
+app: deepin-draw
+module: 标签页
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_标签页_001_s1
+  name: 标签页-Ctrl+N新增标签页
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: MultipTabBarWidget
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+n
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_标签页_004_s1
+  name: 标签页-关闭空白标签页
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: MultipTabBarWidget
+    do: click
+    wait: 1.0
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_标签页_009_s1
+  name: 标签页的右键菜单选项
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: MultipTabBarWidget
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+n
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_标签页_010_s1
+  name: 标签页-关闭标签页-空白画布
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: MultipTabBarWidget
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_标签页_016_s1
+  name: '[417][core][acp1]标签页-打开ddf文件'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: MultipTabBarWidget
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+teardown:
+- action: session_stop

@@ -1,0 +1,148 @@
+name: 图片工具_suite
+app: deepin-draw
+module: 图片工具
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_图片工具_001_s1
+  name: '[549]导入/粘贴图片-粘贴图片小于画布的图片'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Import tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+v
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Import tool button
+      role: push button
+- id: suite_图片工具_002_s1
+  name: '[548]导入/粘贴图片-导入图片小于画布的图片'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Import tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Import tool button
+      role: push button
+- id: suite_图片工具_004_s1
+  name: '[546]导入/粘贴图片-弹窗''保留原图尺寸'''
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Import tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: sizeWidget
+    do: focus
+    wait: 0.3
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Import tool button
+      role: push button
+- id: suite_图片工具_005_s1
+  name: 导入/粘贴图片-选择多张图片导入点击关闭按钮
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Import tool button
+      role: push button
+    do: click
+    wait: 1.0
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Import tool button
+      role: push button
+- id: suite_图片工具_007_s1
+  name: '[545]图片选画板打开-图片尺寸小于默认画布尺寸'
+  description: ''
+  steps:
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_图片工具_013_s1
+  name: '[469]交互-打开大于画布的不同格式图片后进行保存'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Import tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  - step_type: action
+    action: element_action
+    selector:
+      name: Notice save dialog
+    do: focus
+    wait: 0.5
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Import tool button
+      role: push button
+- id: suite_图片工具_014_s1
+  name: '[020][core]图片-属性-水平翻转'
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: r
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+teardown:
+- action: session_stop

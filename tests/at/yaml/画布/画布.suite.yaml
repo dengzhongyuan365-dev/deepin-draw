@@ -1,0 +1,211 @@
+name: 画布_suite
+app: deepin-draw
+module: 画布
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_画布_001_s1
+  name: 画布-使用手形工具向下拖动画布
+  description: ''
+  steps:
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ScanleBtn
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ZoomMenu
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Zoom Menu
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Zoom Menu button
+    do: focus
+    wait: 0.3
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_画布_002_s1
+  name: 画布-使用手形工具向上拖动画布
+  description: ''
+  steps:
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_画布_005_s1
+  name: '[415][core][acp1]画布-手形工具选中图元情况下拖拽画布'
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_画布_007_s1
+  name: 画布-调整画布大小至25%
+  description: ''
+  steps: []
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_画布_010_s1
+  name: '[416][core][acp1]画布-查看调整画布大小选项'
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: r
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_画布_013_s1
+  name: 画布-缩放中心点检查
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: element_action
+    selector:
+      name: Zoom Form
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Zoom increase button
+    do: click
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Zoom reduce button
+    do: click
+    wait: 0.3
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Zoom Form
+- id: suite_画布_017_s1
+  name: 画布-缩小画布使用手形工具调整画布区域
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Zoom reduce button
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Zoom reduce button
+- id: suite_画布_018_s1
+  name: '[393][smoke][acp1]画布-放大画布使用手形工具调整画布区域'
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: element_action
+    selector:
+      name: Zoom increase button
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Zoom increase button
+- id: suite_画布_026_s1
+  name: 画布-画布在10%大小时，点击画布缩小按钮
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: element_action
+    selector:
+      name: Zoom reduce button
+    do: click
+    wait: 0.5
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Zoom reduce button
+- id: suite_画布_027_s1
+  name: 画布-画布为100%大小时，点击画布放大按钮
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Zoom increase button
+    do: click
+    wait: 0.5
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Zoom increase button
+teardown:
+- action: session_stop

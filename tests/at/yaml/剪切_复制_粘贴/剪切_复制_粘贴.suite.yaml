@@ -1,0 +1,106 @@
+name: 剪切_复制_粘贴_suite
+app: deepin-draw
+module: 剪切_复制_粘贴
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_剪切_复制_粘贴_001_s1
+  name: '[057][smoke][acp1]复制与粘贴'
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_剪切_复制_粘贴_002_s1
+  name: '[056][smoke][acp1]剪切操作'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Rectangle tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: dtk_context_menu
+    selector:
+      name: MainWindow
+    items:
+    - 属性
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Rectangle tool button
+- id: suite_剪切_复制_粘贴_005_s1
+  name: '[165][smoke][acp1]粘贴快捷键-Ctrl+V'
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+c
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_剪切_复制_粘贴_007_s1
+  name: '[522]粘贴位置-当前标签页'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: MultipTabBarWidget
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+c
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_剪切_复制_粘贴_009_s1
+  name: 图片-文管复制图片粘贴到画板
+  description: ''
+  steps: []
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_剪切_复制_粘贴_011_s1
+  name: '[520]文字-粘贴文字后撤销、还原'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Text tool button
+    do: click
+    wait: 1.0
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Text tool button
+teardown:
+- action: session_stop

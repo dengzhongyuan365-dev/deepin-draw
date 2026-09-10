@@ -1,0 +1,184 @@
+name: 裁剪工具_suite
+app: deepin-draw
+module: 裁剪工具
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_裁剪工具_001_s1
+  name: 裁剪-尺寸与比例
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Crop tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: Cut ratio(1:1) pushbutton
+    do: click
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Cut ratio(2:3) pushbutton
+    do: click
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Cut ratio(8:5) pushbutton
+    do: click
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Cut ratio(16:9) pushbutton
+    do: click
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Cut ratio(free) pushbutton
+    do: click
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Cut ratio(Original) pushbutton
+    do: click
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Cut done pushbutton
+    do: click
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Cut cancel pushbutton
+    do: click
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: CutHeightLineEdit
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: CutWidthLineEdit
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: FreeBtn
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ScaleBtn11
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ScaleBtn169
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ScaleBtn23
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: ScaleBtn85
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: MenuComboBox
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: Notice cut info dialog
+    do: focus
+    wait: 0.3
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Crop tool button
+- id: suite_裁剪工具_002_s1
+  name: 裁剪尺寸范围
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Crop tool button
+    do: click
+    wait: 1.0
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Crop tool button
+- id: suite_裁剪工具_004_s1
+  name: '[281][core][acp1]裁剪-鼠标调整裁剪区域大小'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Crop tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Crop tool button
+- id: suite_裁剪工具_011_s1
+  name: '[277][smoke][acp1]保存裁剪方式'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Crop tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: DoneBtn
+    do: click
+    wait: 1.0
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Crop tool button
+teardown:
+- action: session_stop

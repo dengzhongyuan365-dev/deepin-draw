@@ -1,0 +1,28 @@
+name: 调色盘_suite
+app: deepin-draw
+module: 调色盘
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_调色盘_001_s1
+  name: '[427][core]调色盘-取色器默认样式检查'
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: PickColorWidget
+    do: click
+    wait: 1.0
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: PickColorWidget
+teardown:
+- action: session_stop

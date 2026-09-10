@@ -1,0 +1,299 @@
+name: 主菜单_suite
+app: deepin-draw
+module: 主菜单
+setup:
+- action: session_start
+  command: deepin-draw
+  wait: 3.0
+suites:
+- id: suite_主菜单_001_s1
+  name: '[508]主菜单UI显示'
+  description: ''
+  steps:
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  - step_type: action
+    action: element_action
+    selector:
+      name: MainWindow
+    do: focus
+    wait: 0.3
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MainWindow
+- id: suite_主菜单_002_s1
+  name: 打开-支持的格式
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Import tool button
+      role: push button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  - step_type: action
+    action: element_action
+    selector:
+      name: LeftTool bar
+    do: focus
+    wait: 0.3
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Import tool button
+      role: push button
+- id: suite_主菜单_003_s1
+  name: '[078][core]主菜单-新建标签页'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: MultipTabBarWidget
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_主菜单_004_s1
+  name: 打开-主菜单中打开支持的格式
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_主菜单_005_s1
+  name: 打开-快捷键Ctrl+O
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: ctrl+o
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_主菜单_008_s1
+  name: '[052]打印-打印为PDF'
+  description: ''
+  steps:
+  - step_type: action
+    action: keyboard_press
+    key: p
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  - step_type: action
+    action: element_action
+    selector:
+      name: DDFSaveDialog
+    do: focus
+    wait: 0.3
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: DDFSaveDialog
+- id: suite_主菜单_009_s1
+  name: 打印-打印为另存为图片
+  description: ''
+  steps:
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_主菜单_012_s1
+  name: 打印-多个标签页时进行打印操作
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: MultipTabBarWidget
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: keyboard_press
+    key: r
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_主菜单_013_s1
+  name: 打印-多次打印文件
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: MultipTabBarWidget
+    do: click
+    wait: 1.0
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_主菜单_014_s1
+  name: 主题-主题的二级菜单
+  description: ''
+  steps: []
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: MultipTabBarWidget
+- id: suite_主菜单_019_s1
+  name: 主题-最小化画板将保存主题设置
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: ColorSlider
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: ColorLabel
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: ColorLineEdit
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: ColorfulBtn
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: RedEditLabel
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: GreenEditLabel
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: BlueEditLabel
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: PickColorPickerButton
+    do: focus
+    wait: 0.3
+  - step_type: action
+    action: element_action
+    selector:
+      name: ColorPickWidget
+    do: focus
+    wait: 0.3
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: ColorSlider
+- id: suite_主菜单_024_s1
+  name: 帮助-帮助文档内容检查
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      name: Text tool button
+    do: click
+    wait: 1.0
+  - step_type: action
+    action: element_action
+    selector:
+      name: TextEditor
+    do: focus
+    wait: 0.3
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      name: Text tool button
+- id: suite_主菜单_033_s1
+  name: '[005][smoke]编辑画板后退出，修改设置后确认保存'
+  description: ''
+  steps:
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: FileNameEdit
+    do: focus
+    wait: 0.5
+  - step_type: action
+    action: element_action
+    selector:
+      accessible_id: SavePathCombox
+    do: click
+    wait: 0.5
+  - step_type: action
+    action: keyboard_press
+    key: e
+  - step_type: action
+    action: dtk_main_menu
+    items:
+    - 导出
+  assert_steps:
+  - step_type: assert
+    action: assert_element
+    selector:
+      accessible_id: FileNameEdit
+      role: text
+teardown:
+- action: session_stop
